@@ -1,0 +1,19 @@
+version: '2'
+services:
+  codeceptjs:
+    image: codeception/codeceptjs
+    depends_on:
+      - standalone-firefox
+      - web
+    volumes:
+      - .:/tests
+  web:
+    image: node:8
+    command: node app/app.js
+    volumes:
+      - .:/app
+  standalone-firefox:
+    image: selenium/standalone-firefox-debug:2.53.0
+    ports:
+      - '4444'
+      - '5900'

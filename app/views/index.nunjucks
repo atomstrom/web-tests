@@ -1,0 +1,14 @@
+{% extends 'layout.nunjucks' %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+  <form>
+    <div>
+      <label for="input-name">Enter something: </label>
+      <input type="text" id="input-name" name="input-name">
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
+</form>
+{% endblock %}
